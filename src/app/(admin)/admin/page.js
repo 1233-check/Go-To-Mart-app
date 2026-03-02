@@ -12,6 +12,7 @@ const NAV_ITEMS = [
     { href: '/admin/products', icon: '📦', label: 'Products' },
     { href: '/admin/categories', icon: '📂', label: 'Categories' },
     { href: '/admin/users', icon: '👥', label: 'Users' },
+    { href: '/admin/analytics', icon: '📈', label: 'Analytics' },
 ];
 
 const STATUS_LABELS = {

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 
 export default function LoginPage() {
@@ -167,10 +168,10 @@ export default function LoginPage() {
                 <div style={{ marginTop: 'var(--space-6)', paddingTop: 'var(--space-4)', borderTop: '1px solid var(--border-light)' }}>
                     <p className="text-xs text-secondary text-center" style={{ marginBottom: 'var(--space-2)' }}>Quick Access (no login required)</p>
                     <div className="flex gap-2">
-                        <a href="/" className="btn btn-ghost btn-sm" style={{ flex: 1, fontSize: 'var(--font-xs)' }}>🛒 Shop</a>
-                        <a href="/admin" className="btn btn-ghost btn-sm" style={{ flex: 1, fontSize: 'var(--font-xs)' }}>📊 Admin</a>
-                        <a href="/store" className="btn btn-ghost btn-sm" style={{ flex: 1, fontSize: 'var(--font-xs)' }}>🏪 Store</a>
-                        <a href="/delivery" className="btn btn-ghost btn-sm" style={{ flex: 1, fontSize: 'var(--font-xs)' }}>🛵 Delivery</a>
+                        <Link href="/" className="btn btn-ghost btn-sm" style={{ flex: 1, fontSize: 'var(--font-xs)' }}>🛒 Shop</Link>
+                        <Link href="/admin" className="btn btn-ghost btn-sm" style={{ flex: 1, fontSize: 'var(--font-xs)' }}>📊 Admin</Link>
+                        <Link href="/store" className="btn btn-ghost btn-sm" style={{ flex: 1, fontSize: 'var(--font-xs)' }}>🏪 Store</Link>
+                        <Link href="/delivery" className="btn btn-ghost btn-sm" style={{ flex: 1, fontSize: 'var(--font-xs)' }}>🛵 Delivery</Link>
                     </div>
                 </div>
             </div>

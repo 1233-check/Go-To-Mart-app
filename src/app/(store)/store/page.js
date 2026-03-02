@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import { formatPrice } from '@/lib/cart';
 
@@ -65,14 +66,37 @@ export default function StoreDashboard() {
     return (
         <div style={{ minHeight: '100vh', background: 'var(--bg-secondary)' }}>
             {/* Header */}
-            <div className="app-header">
-                <h1>🏪 Store Dashboard</h1>
-                <div className="flex items-center gap-2">
-                    {newOrderCount > 0 && (
-                        <span className="badge" style={{ background: 'var(--accent)', color: 'var(--primary-dark)', fontWeight: 700 }}>
-                            {newOrderCount} NEW
-                        </span>
-                    )}
+            <div className="app-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingBottom: 0 }}>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)' }}>
+                    <h1>🏪 Store Dashboard</h1>
+                    <div className="flex items-center gap-2">
+                        {newOrderCount > 0 && (
+                            <span className="badge" style={{ background: 'var(--accent)', color: 'var(--primary-dark)', fontWeight: 700 }}>
+                                {newOrderCount} NEW
+                            </span>
+                        )}
+                    </div>
+                </div>
+
+                {/* Internal Nav */}
+                <div style={{ display: 'flex', width: '100%', borderBottom: '1px solid var(--border-light)' }}>
+                    <Link href="/store" style={{
+                        padding: 'var(--space-3) var(--space-4)',
+                        fontWeight: 600,
+                        color: 'var(--primary)',
+                        borderBottom: '3px solid var(--primary)',
+                        textDecoration: 'none'
+                    }}>
+                        Orders
+                    </Link>
+                    <Link href="/store/inventory" style={{
+                        padding: 'var(--space-3) var(--space-4)',
+                        fontWeight: 600,
+                        color: 'var(--text-secondary)',
+                        textDecoration: 'none'
+                    }}>
+                        Inventory
+                    </Link>
                 </div>
             </div>
 

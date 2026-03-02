@@ -60,7 +60,7 @@ export default function CustomerHome() {
             }
 
             if (searchQuery.trim()) {
-                query = query.ilike('name', `%${searchQuery.trim()}%`);
+                query = query.or(`name.ilike.%${searchQuery.trim()}%,description.ilike.%${searchQuery.trim()}%`);
             }
 
             const { data } = await query.order('name');
